@@ -7,8 +7,9 @@
 body {
   font-family: 'montserrat', sans-serif;
   background-image: url(eugene-chystiakov-_8AgDEqYtMc-unsplash.jpg);
-  background-size: center;
-  background-position: top-center;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .app-wrap {
