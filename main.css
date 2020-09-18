@@ -6,9 +6,8 @@
 
 body {
   font-family: 'montserrat', sans-serif;
-  background-image: url(eugene-chystiakov-_8AgDEqYtMc-unsplash.jpg);
-  background-size: auto;
-  background-repeat: no-repeat;
+  background-image: url(graham-holtshausen-fUnfEz3VLv4-unsplash.jpg);
+  background-size: cover;
   background-position: center;
 }
 
@@ -42,7 +41,11 @@ header input {
 }
 
 header input:focus {
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(63, 62, 62, 0.637);
+}
+
+header input::placeholder {
+  color: #FFF;
 }
 
 main {
