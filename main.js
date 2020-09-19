@@ -3,6 +3,8 @@ const api = {
   base: "https://api.openweathermap.org/data/2.5/",
 }
 
+const defaultCity = "Austin"
+
 const searchbox = document.querySelector('.search-box');
 searchbox.addEventListener('keypress', setQuery);
 
@@ -18,6 +20,15 @@ function getResults(query) {
       return weather.json();
     }).then(displayResults);
 }
+
+function loadDefaultCity() {
+  fetch(`${api.base}weather?q=${defaultCity}&units=imperial&APPID=${api.key}`)
+    .then(weather => {
+      return weather.json();
+    }).then(displayResults);
+}
+
+loadDefaultCity()
 
 function displayResults(weather) {
   console.log(weather);

@@ -14,15 +14,18 @@ body {
 .app-wrap {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-content: center;
   min-height: 100vh;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
 }
 
 header {
   display: flex;
+  background-color: rgba(15, 13, 13, 0.815);
   justify-content: center;
   align-items: center;
-  padding: 50px 15px 15px;
+  padding: 20px 50px;
 }
 
 header input {
@@ -31,7 +34,7 @@ header input {
   padding: 10px 15px;
   border: none;
   outline: none;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(66, 66, 66, 0.712);
   color: #313131;
   border-radius: 16px 0px 16px 0px;
   border-bottom: 3px solid #DF8E00;
@@ -42,6 +45,8 @@ header input {
 
 header input:focus {
   background-color: rgba(63, 62, 62, 0.637);
+  color: #FFF;
+
 }
 
 header input::placeholder {
@@ -54,6 +59,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* justify-content: center; */
   text-align: center;
 }
 
