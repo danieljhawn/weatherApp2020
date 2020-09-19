@@ -100,16 +100,24 @@ main {
 }
 
 .days {
-  background-color: red;
+  background-color:  rgba( 0, 0, 0, 0.4);
   margin: 15px;
   padding: 20px;
   text-align: center;
 }
 
 .fiveDayForecast {
-  background-color: royalblue;
-  margin: 0px;
+  background-color:  rgba( 0, 0, 0, 0.4);
   padding: 20px;
+}
+
+.fiveDayForecast .title {
+  color: #FFF;
+  font-size: 20px;
+  font-weight: 200;
+  text-shadow: 2px 8px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  padding: 0;
 }
 
 .fiveDayForecast .temp {

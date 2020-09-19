@@ -40,51 +40,43 @@ function getFiveDay(cityName) {
 loadDefaultCity()
 
 function displayFiveDay(weather) {
-  console.log(weather);
-  console.log(weather.list[0].main.temp_max)
 
-  let forecast = document.querySelector('.container');
+  let forecast = document.querySelector('.fiveDayForecast');
   forecast.innerHTML = `
-    <div class="days">
-      <div class="temp">${Math.round(weather.list[0].main.temp)}</div>
-      <div class="weather">${weather.list[0].weather[0].description}</div>
-      <div class="hi-low">${Math.round(weather.list[0].main.temp_min)} / ${Math.round(weather.list[0].main.temp_max)}</div>
-    </div>
-  
-    <div class="days">
-      <div class="temp">${Math.round(weather.list[1].main.temp)}</div>
-      <div class="weather">${weather.list[1].weather[0].description}</div>
-      <div class="hi-low">${Math.round(weather.list[1].main.temp_min)} / ${Math.round(weather.list[0].main.temp_max)}</div>
-    </div>
-  
-    <div class="days">
-      <div class="temp">${Math.round(weather.list[2].main.temp)}</div>
-      <div class="weather">${weather.list[2].weather[0].description}</div>
-      <div class="hi-low">${Math.round(weather.list[2].main.temp_min)} / ${Math.round(weather.list[0].main.temp_max)}</div>
-    </div>
-  
-    <div class="days">
-      <div class="temp">${Math.round(weather.list[3].main.temp)}</div>
-      <div class="weather">${weather.list[3].weather[0].description}</div>
-      <div class="hi-low">${Math.round(weather.list[3].main.temp_min)} / ${Math.round(weather.list[0].main.temp_max)}</div>
-    </div>
-  
-    <div class="days">
-      <div class="temp">${Math.round(weather.list[4].main.temp)}</div>
-      <div class="weather">${weather.list[4].weather[0].description}</div>
-      <div class="hi-low">${Math.round(weather.list[4].main.temp_min)} / ${Math.round(weather.list[0].main.temp_max)}</div>
+  <h4 class="title">5 Day Forecast</h4>
+    <div class="container">
+      <div class="days">
+        <div class="temp">${Math.round(weather.list[0].main.temp)}</div>
+        <div class="weather">${weather.list[0].weather[0].description}</div>
+        <div class="hi-low">${Math.round(weather.list[0].main.temp_min)} / ${Math.round(weather.list[0].main.temp_max)}</div>
+      </div>
+    
+      <div class="days">
+        <div class="temp">${Math.round(weather.list[1].main.temp)}</div>
+        <div class="weather">${weather.list[1].weather[0].description}</div>
+        <div class="hi-low">${Math.round(weather.list[1].main.temp_min)} / ${Math.round(weather.list[0].main.temp_max)}</div>
+      </div>
+    
+      <div class="days">
+        <div class="temp">${Math.round(weather.list[2].main.temp)}</div>
+        <div class="weather">${weather.list[2].weather[0].description}</div>
+        <div class="hi-low">${Math.round(weather.list[2].main.temp_min)} / ${Math.round(weather.list[0].main.temp_max)}</div>
+      </div>
+    
+      <div class="days">
+        <div class="temp">${Math.round(weather.list[3].main.temp)}</div>
+        <div class="weather">${weather.list[3].weather[0].description}</div>
+        <div class="hi-low">${Math.round(weather.list[3].main.temp_min)} / ${Math.round(weather.list[0].main.temp_max)}</div>
+      </div>
+    
+      <div class="days">
+        <div class="temp">${Math.round(weather.list[4].main.temp)}</div>
+        <div class="weather">${weather.list[4].weather[0].description}</div>
+        <div class="hi-low">${Math.round(weather.list[4].main.temp_min)} / ${Math.round(weather.list[0].main.temp_max)}</div>
+      </div>
     </div>
   
   `
-
-  // let temp = document.querySelector('.days .zero .temp')
-  // temp.innerHTML = `${Math.round(weather.list[0].main.temp)}<span>°F</span>`;
-
-  // let weather_el = document.querySelector('.current .weather');
-  // weather_el.innerText = weather.weather[0].main;
-
-  // let hilow = document.querySelector('.hi-low');
-  // hilow.innerText = `${Math.round(weather.main.temp_min)}°F / ${Math.round(weather.main.temp_max)}°F`;
 }
 
 function displayResults(weather) {
