@@ -46,7 +46,6 @@ header input {
 header input:focus {
   background-color: rgba(63, 62, 62, 0.637);
   color: #FFF;
-
 }
 
 header input::placeholder {
@@ -56,7 +55,7 @@ header input::placeholder {
 main {
   flex: 1 5 100%;
   padding: 25px 25px 50px;
-  margin-top:25px;
+  margin-top: 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -84,10 +83,6 @@ main {
   text-shadow: 2px 8px rgba(0, 0, 0, 0.5);
 }
 
-.current .temp span {
-  font-weight: 500;
-}
-
 .current .weather {
   color: #FFF;
   font-size: 32px;
@@ -96,6 +91,7 @@ main {
   margin-bottom: 15px;
   text-shadow: 0px 3px rgba( 0, 0, 0, 0.4);
 }
+
 .current .hi-low {
   color: #fff;
   font-size: 24px;
@@ -103,23 +99,25 @@ main {
   text-shadow: 0px 4px rgba( 0, 0, 0, 0.4);
 }
 
-.fiveDayForecast {
- background-color: royalblue;
- margin: 20px;
- padding: 50px;
+.days {
+  background-color: red;
+  margin: 15px;
+  padding: 20px;
+  text-align: center;
+}
 
+.fiveDayForecast {
+  background-color: royalblue;
+  margin: 0px;
+  padding: 20px;
 }
 
 .fiveDayForecast .temp {
   color: #FFF;
-  font-size: 102px;
-  font-weight: 900;
-  margin: 10px;
+  font-size: 60px;
+  font-weight: 200;
   text-shadow: 2px 8px rgba(0, 0, 0, 0.5);
-}
-
-.fiveDayForecast .temp span {
-  font-weight: 500;
+  padding: 0;
 }
 
 .fiveDayForecast .weather {
@@ -127,12 +125,19 @@ main {
   font-size: 32px;
   font-weight: 700;
   font-style: italic;
-  margin-bottom: 15px;
   text-shadow: 0px 3px rgba( 0, 0, 0, 0.4);
 }
+
 .fiveDayForecast .hi-low {
   color: #fff;
   font-size: 24px;
   font-weight: 500;
   text-shadow: 0px 4px rgba( 0, 0, 0, 0.4);
+}
+
+.container {
+  /* max-width: 1200px; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
