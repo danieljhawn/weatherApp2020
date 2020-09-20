@@ -80,6 +80,7 @@ function displayFiveDay(weather) {
 }
 
 function displayResults(weather) {
+  console.log(weather);
   let city = document.querySelector('.location .city');
   city.innerText = `${weather.name}, ${weather.sys.country}`;
 
@@ -89,6 +90,9 @@ function displayResults(weather) {
 
   let temp = document.querySelector('.current .temp')
   temp.innerHTML = `${Math.round(weather.main.temp)}<span>°F</span>`;
+
+  let humidity = document.querySelector('.current .humidity');
+  humidity.innerHTML = `${weather.main.humidity}<span>% humidity</span>`;
 
   let weather_el = document.querySelector('.current .weather');
   weather_el.innerText = weather.weather[0].main;
