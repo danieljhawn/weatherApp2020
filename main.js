@@ -9,6 +9,9 @@ const defaultCity = "Austin"
 const searchbox = document.querySelector('.search-box');
 searchbox.addEventListener('keypress', setQuery);
 
+const showDefault5day = document.querySelector('.title');
+showDefault5day.addEventListener('click', defaultFiveDay);
+
 function setQuery(evt) {
   if (evt.keyCode == 13) {
     getResults(searchbox.value);
@@ -37,6 +40,13 @@ function getFiveDay(cityName) {
     }).then(displayFiveDay);
 }
 
+function defaultFiveDay(cityName) {
+  fetch(`${api.fiveDay}?q=${defaultCity}&units=imperial&APPID=${api.key}`)
+    .then(weather => {
+      return weather.json();
+    }).then(displayFiveDay);
+}
+
 loadDefaultCity()
 
 function displayFiveDay(weather) {
@@ -44,36 +54,36 @@ function displayFiveDay(weather) {
   let forecast = document.querySelector('.fiveDayForecast');
   forecast.innerHTML = `
   <h4 class="title">5 Day Forecast</h4>
-    <div class="container">
-      <div class="days">
-        <div class="temp">${Math.round(weather.list[0].main.temp)}</div>
-        <div class="weather">${weather.list[0].weather[0].description}</div>
-        <div class="hi-low">${Math.round(weather.list[0].main.temp_min)} / ${Math.round(weather.list[0].main.temp_max)}</div>
-      </div>
-    
-      <div class="days">
-        <div class="temp">${Math.round(weather.list[1].main.temp)}</div>
-        <div class="weather">${weather.list[1].weather[0].description}</div>
-        <div class="hi-low">${Math.round(weather.list[1].main.temp_min)} / ${Math.round(weather.list[0].main.temp_max)}</div>
-      </div>
-    
-      <div class="days">
-        <div class="temp">${Math.round(weather.list[2].main.temp)}</div>
-        <div class="weather">${weather.list[2].weather[0].description}</div>
-        <div class="hi-low">${Math.round(weather.list[2].main.temp_min)} / ${Math.round(weather.list[0].main.temp_max)}</div>
-      </div>
-    
-      <div class="days">
-        <div class="temp">${Math.round(weather.list[3].main.temp)}</div>
-        <div class="weather">${weather.list[3].weather[0].description}</div>
-        <div class="hi-low">${Math.round(weather.list[3].main.temp_min)} / ${Math.round(weather.list[0].main.temp_max)}</div>
-      </div>
-    
-      <div class="days">
-        <div class="temp">${Math.round(weather.list[4].main.temp)}</div>
-        <div class="weather">${weather.list[4].weather[0].description}</div>
-        <div class="hi-low">${Math.round(weather.list[4].main.temp_min)} / ${Math.round(weather.list[0].main.temp_max)}</div>
-      </div>
+      <div class="container">
+        <div class="days">
+          <div class="temp">${Math.round(weather.list[0].main.temp)}°F</div>
+          <div class="weather">${weather.list[0].weather[0].description}</div>
+          <div class="hi-low">${Math.round(weather.list[0].main.temp_min)}°F / ${Math.round(weather.list[0].main.temp_max)}°F</div>
+        </div>
+      
+        <div class="days">
+          <div class="temp">${Math.round(weather.list[1].main.temp)}°F</div>
+          <div class="weather">${weather.list[1].weather[0].description}°F</div>
+          <div class="hi-low">${Math.round(weather.list[1].main.temp_min)}°F / ${Math.round(weather.list[0].main.temp_max)}°F</div>
+        </div>
+      
+        <div class="days">
+          <div class="temp">${Math.round(weather.list[2].main.temp)}°F</div>
+          <div class="weather">${weather.list[2].weather[0].description}</div>
+          <div class="hi-low">${Math.round(weather.list[2].main.temp_min)}°F / ${Math.round(weather.list[0].main.temp_max)}°F</div>
+        </div>
+      
+        <div class="days">
+          <div class="temp">${Math.round(weather.list[3].main.temp)}°F</div>
+          <div class="weather">${weather.list[3].weather[0].description}</div>
+          <div class="hi-low">${Math.round(weather.list[3].main.temp_min)}°F / ${Math.round(weather.list[0].main.temp_max)}°F</div>
+        </div>
+      
+        <div class="days">
+          <div class="temp">${Math.round(weather.list[4].main.temp)}°F</div>
+          <div class="weather">${weather.list[4].weather[0].description}</div>
+          <div class="hi-low">${Math.round(weather.list[4].main.temp_min)}°F / ${Math.round(weather.list[0].main.temp_max)}°F</div>
+        </div>
     </div>
   
   `
@@ -82,7 +92,7 @@ function displayFiveDay(weather) {
 function displayResults(weather) {
   console.log(weather);
   let city = document.querySelector('.location .city');
-  city.innerText = `${weather.name}, ${weather.sys.country}`;
+  city.innerText = `${weather.name}, ${weather.sys.state}`;
 
   let now = new Date();
   let date = document.querySelector('.location .date');
