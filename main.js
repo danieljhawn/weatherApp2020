@@ -6,6 +6,9 @@ const api = {
 
 const defaultCity = "Austin"
 
+const stateSelector = document.getElementById("state");
+const state = stateSelector.value;
+
 const searchbox = document.querySelector('.search-box');
 searchbox.addEventListener('keypress', setQuery);
 
@@ -34,9 +37,12 @@ function loadDefaultCity() {
 }
 
 function getFiveDay(cityName) {
-  fetch(`${api.fiveDay}?q=${cityName}&units=imperial&APPID=${api.key}`)
+  fetch(`${api.fiveDay}?q=${cityName},${state}&units=imperial&APPID=${api.key}`)
     .then(weather => {
       return weather.json();
+      console.log(weather);
+      console.log(state);
+      console.log("THIS WORKED");
     }).then(displayFiveDay);
 }
 
@@ -50,7 +56,7 @@ function defaultFiveDay(cityName) {
 loadDefaultCity()
 
 function displayFiveDay(weather) {
-
+  console.log(state);
   let forecast = document.querySelector('.fiveDayForecast');
   forecast.innerHTML = `
   <h4 class="title">5 Day Forecast</h4>
@@ -90,7 +96,7 @@ function displayFiveDay(weather) {
 }
 
 function displayResults(weather) {
-  console.log(weather);
+  // console.log(weather);
   let city = document.querySelector('.location .country');
   city.innerText = `${weather.name}, ${weather.sys.country}`;
 
