@@ -91,7 +91,7 @@ function displayFiveDay(weather) {
 
 function displayResults(weather) {
   console.log(weather);
-  let city = document.querySelector('.location .city');
+  let city = document.querySelector('.location .country');
   city.innerText = `${weather.name}, ${weather.sys.country}`;
 
   let now = new Date();
